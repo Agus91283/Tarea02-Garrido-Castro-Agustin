@@ -25,10 +25,10 @@ def obtener_datos_por_ip(ip):
                 j1 = i.split()
                 if len(j1) >= 2:
                     mac = j1[1]
-                    print(f"IP: {ip}, MAC: {mac}")
+                    print(f"IP: {ip}")
                     obtener_datos_por_mac(mac)
                     return
-        print(f"No se encontró la IP: {ip} en la tabla ARP.")
+        print(f"Error : ip is outside the host network")
     except subprocess.CalledProcessError:
         print("Error al ejecutar el comando arp.")
     except Exception as e:
@@ -37,7 +37,7 @@ def obtener_datos_por_ip(ip):
 # Función para obtener los datos de fabricación de una tarjeta de red por MAC
 def obtener_datos_por_mac(mac):
     fabricante = basedatoslocal.get(mac, "Desconocido")
-    print(f"MAC: {mac}, Fabricante: {fabricante}")
+    print(f"MAC: {mac},\n Fabricante: {fabricante}")
 
 # Función para obtener la tabla ARP
 def obtener_tabla_arp():
