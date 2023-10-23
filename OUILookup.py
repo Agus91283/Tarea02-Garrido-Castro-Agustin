@@ -10,6 +10,7 @@ basedatoslocal = {
     "AC:F7:F3:aa:aa:aa": "Xiaomi",
     "00:01:97:bb:bb:bb": "Cisco",
     "FF-FF-FF-FF-FF-FF": "Broadcast",
+    "00:E0:64:aa:aa:aa": "Samsung",
     
 }
 
@@ -36,8 +37,8 @@ def obtener_datos_por_ip(ip):
 
 # Función para obtener los datos de fabricación de una tarjeta de red por MAC
 def obtener_datos_por_mac(mac):
-    fabricante = basedatoslocal.get(mac, "Desconocido")
-    print(f"MAC: {mac},\n Fabricante: {fabricante}")
+    fabricante = basedatoslocal.get(mac, "Not Found")
+    print(f"MAC address: {mac},\n Fabricante: {fabricante}")
 
 # Función para obtener la tabla ARP
 def obtener_tabla_arp():
